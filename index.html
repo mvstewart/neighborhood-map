@@ -8,16 +8,11 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
 
-  <script src="js/knockout.js"></script>
+  <script src="js/knockout-3.4.0.js"></script>
 
   <!-- Add a custom js code -->
   <script src=""></script>
 
-  <!--
-  ready to add an interactive
-  Google Map to my resume!
-  -->
-  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
@@ -41,16 +36,18 @@
     <div id="listView" class="gray">
       <ul id="listView" class="flex-box">A list view</ul>
     </div>
-    <div id="map-div">
-      <h2>My neighborhood map</h2>
-      function initMap() {
-        // Create a map object and specify the DOM element for display.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          scrollwheel: false,
-          zoom: 8
-        });
-      }
+    <div id="map">
+      <script>
+        var map;
+        function initMap() {
+          // Create a map object and specify the DOM element for display.
+          var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            scrollwheel: false,
+            zoom: 8
+          });
+        }
+      </script>
     </div>
     <div id="lets-connect" class="dark-gray">
       <h2 class="orange center-text">Let's Connect</h2>
@@ -58,6 +55,7 @@
       </ul>
     </div>
   </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-k68IPUbtykXgbBdlubM13zuotdwbp8M&callback=initMap"></script>
 
 </body>
 </html>
