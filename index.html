@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Neighborhood Map</title>
+
+  <!-- Load the page styles. -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+
+  <script src="js/knockout.js"></script>
+
+  <!-- Add a custom js code -->
+  <script src=""></script>
+
+  <!--
+  ready to add an interactive
+  Google Map to my resume!
+  -->
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+  <div id="main">
+
+    <!--
+    #1 Add a full-screen map
+    #2 display map markers identifying at least 5 locations that you are interested in within this neighborhood. display those locations by default when the page is loaded.
+    #3 Provide a list view of the set of locations
+    #4 Provide a filter option that uses an input field to filter both the list view and the map markers displayed by default on load. The list view and the markers should update accordingly. 
+    #5 Add functionality using third-party APIs to provide information when a map marker or list view entry is clicked (ex. Yelp reviews, Wikipedia, Flickr images, etc).  Provide attribution to the data sources/APIs used. For example if used Foursquare, indicate somewhere in the interface and in the README that  used Foursquare's API.
+    #6 Add functionality to animate a map marker when either the list item associated with it or the map marker itself is selected.
+    #7 Add functionality to open an infoWindow with the information described in #5.
+    #8 Selecting a location via list item or map marker should cause the map marker to bounce or in some other way animate to indicate that the location has been selected and associated info window should open above map marker with additional information.
+    #9 Error Handling: In case of error (e.g. in a situation where a third party api does not return the expected result) we expect your webpage to do one of the following: A message is displayed notifying the user that the data can't be loaded, OR There are no negative repercussions to the UI.
+    -->
+    <div id="header" class="center-content clear-fix">
+      <div id="searchBar" class="flex-box">A search bar</div>
+    </div>
+    <div style="clear: both;"></div>
+    <div id="listView" class="gray">
+      <ul id="listView" class="flex-box">A list view</ul>
+    </div>
+    <div id="map-div">
+      <h2>My neighborhood map</h2>
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          scrollwheel: false,
+          zoom: 8
+        });
+      }
+    </div>
+    <div id="lets-connect" class="dark-gray">
+      <h2 class="orange center-text">Let's Connect</h2>
+        <ul id="footerContacts" class="flex-box">
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
